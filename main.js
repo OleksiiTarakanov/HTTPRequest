@@ -3,11 +3,12 @@
         let fSearch = document.forms['bookSearch'];
         let inpVal = fSearch.tr.value;
         let xhr = new XMLHttpRequest();
-        xhr.open('GET',`https://api.itbook.store/1.0/search/html/${inpVal}`, false);
-        xhr.send();
+        xhr.open('GET',`https://it-ebooks-api.info/v1/search/${inpVal}`);
         document.querySelector('.text').innerHTML += xhr.responseText;
         console.log(xhr.status);
         console.log(inpVal);
+        xhr.send();
         fSearch.reset();
+        
     });
 })();
